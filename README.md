@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to your Lovable project
 
 This project was built with [Lovable](https://lovable.dev).
@@ -50,3 +51,6 @@ The analysis returns:
 - prioritized suggestions and final action tips
 
 The API key is read only on the server in `src/lib/resume-match.functions.ts`. Do not commit `.env` or expose `GROQ_API_KEY` in client-side code.
+=======
+# Resume-Matcher
+>>>>>>> 190a646483cb5651124c5cc2fb9ce49bc711503c
