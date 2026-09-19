@@ -1,56 +1,271 @@
-<<<<<<< HEAD
-# Welcome to your Lovable project
+# 📄 Resume Matcher — AI-Powered Resume & Job Description Analyzer
 
-This project was built with [Lovable](https://lovable.dev).
+Resume Matcher is an AI-powered web application that analyzes a candidate's resume against a given job description and provides a detailed matching analysis.
 
-## Build with Lovable
+The application helps users understand how well their resume aligns with a specific job role, identify missing skills, and improve their resume based on the requirements of the job.
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## 🚀 Features
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+* 📄 Upload or provide a resume
+* 💼 Enter a job description
+* 🤖 AI-powered resume analysis using Groq API
+* 🎯 Resume-to-job matching analysis
+* 📊 Match score and relevant insights
+* 🧠 Identifies matching skills and qualifications
+* ⚠️ Highlights missing or weak skills
+* 💡 Provides resume improvement suggestions
+* 🔍 Helps identify important keywords from the job description
+* ⚡ Fast AI-powered analysis
 
-## Development
+## 🏗️ Project Workflow
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+```text
+User
+ │
+ ├── Upload Resume
+ │
+ └── Enter Job Description
+          │
+          ▼
+     Frontend Application
+          │
+          ▼
+       Backend API
+          │
+          ▼
+      Resume Parser
+          │
+          ▼
+     Groq AI Analysis
+          │
+          ▼
+   Resume vs Job Description
+          │
+          ▼
+     Matching Results
+          │
+          ├── Match Score
+          ├── Matching Skills
+          ├── Missing Skills
+          ├── Keyword Analysis
+          └── Improvement Suggestions
+```
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+## 🛠️ Tech Stack
+
+### Frontend
+
+* HTML / CSS / JavaScript
+* React.js *(if used in your project)*
+
+### Backend
+
+* Python
+* Flask / FastAPI *(use the framework used in your project)*
+
+### AI
+
+* Groq API
+* Large Language Model (LLM)
+
+### Other Technologies
+
+* REST API
+* PDF/Text Resume Processing
+* Environment Variables
+* Git & GitHub
+
+## 📂 Project Structure
+
+```text
+Resume-Matcher/
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── backend/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── ...
+│
+├── .env
+├── .gitignore
+└── README.md
+```
+
+> Project structure may vary depending on the implementation.
+
+## ⚙️ How to Run the Project
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/arockia-joshwa/Resume-Matcher.git
+cd Resume-Matcher
+```
+
+### 2. Set Up the Backend
+
+Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate it on Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Configure Groq API
+
+Create a `.env` file inside the backend directory:
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
+```
+
+**Important:** Never upload your API key to GitHub.
+
+Make sure `.env` is included in `.gitignore`:
+
+```text
+.env
+venv/
+__pycache__/
+```
+
+### 4. Start the Backend
+
+```bash
+python app.py
+```
+
+The backend will start on the configured local port.
+
+### 5. Start the Frontend
+
+Open another terminal and navigate to the frontend:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
 ```
 
-## Built with
+Open the URL displayed in your terminal.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## 🧪 How to Use
 
+1. Open the Resume Matcher application.
+2. Upload your resume.
+3. Paste the job description.
+4. Click **Analyze** / **Match Resume**.
+5. The application sends the resume and job description to the backend.
+6. The backend processes the content using the Groq API.
+7. AI generates the matching analysis.
+8. Review the results and improve your resume accordingly.
 
-## Groq API setup
+## 📊 Example Analysis
 
-The Resume Matcher sends the extracted resume text and pasted job description to Groq **from the server**, so the API key is not placed in the browser.
+The application can provide information such as:
 
-1. Create a `.env` file in the project root by copying `.env.example`.
-2. Add your Groq key:
-   `GROQ_API_KEY=your_real_key_here`
-3. Leave `GROQ_MODEL=openai/gpt-oss-120b` unless your Groq account uses another active model.
-4. Restart the development server after changing `.env`.
+```text
+Resume Match Score: 82%
 
-The analysis returns:
-- overall match percentage
-- skill, experience, keyword, education, and project scores
-- matched and partially matched skills with evidence
-- missing required/preferred skills
-- missing and important ATS keywords
-- potentially unwanted/low-relevance skills already in the resume
-- ATS readability findings
-- prioritized suggestions and final action tips
+Matching Skills:
+✓ Python
+✓ SQL
+✓ Data Analysis
+✓ Git
+✓ Machine Learning
 
-The API key is read only on the server in `src/lib/resume-match.functions.ts`. Do not commit `.env` or expose `GROQ_API_KEY` in client-side code.
-=======
-# Resume-Matcher
->>>>>>> 190a646483cb5651124c5cc2fb9ce49bc711503c
+Missing / Recommended Skills:
+• Apache Spark
+• Airflow
+• AWS
+• Docker
+
+Suggestions:
+• Add measurable project achievements.
+• Include relevant technical keywords.
+• Highlight experience related to the job requirements.
+```
+
+## 🔐 Environment Variables
+
+The project uses environment variables to securely store API credentials.
+
+```env
+GROQ_API_KEY=your_api_key
+```
+
+Do not commit API keys, passwords, tokens, or other secrets to GitHub.
+
+## 🎯 Use Cases
+
+* Resume optimization
+* Job application preparation
+* Skill-gap identification
+* ATS keyword improvement
+* Career preparation
+* Job-specific resume analysis
+* Fresher resume evaluation
+
+## 🔮 Future Improvements
+
+* [ ] ATS compatibility score
+* [ ] Multiple resume formats
+* [ ] Resume section-by-section analysis
+* [ ] Job recommendation system
+* [ ] LinkedIn profile analysis
+* [ ] Resume improvement suggestions with AI
+* [ ] Downloadable analysis report
+* [ ] Support for multiple AI models
+* [ ] Resume version comparison
+* [ ] Authentication and user profiles
+
+## 👨‍💻 Author
+
+**Arockia Joshwa J**
+
+B.Tech Artificial Intelligence & Data Science Student
+Aspiring Data Engineer
+
+### Connect With Me
+
+* LinkedIn: [Joshwa J](https://www.linkedin.com/in/joshwa-j-6051a4327/)
+* GitHub: [arockia-joshwa](https://github.com/arockia-joshwa)
+
+## ⭐ Support
+
+If you find this project useful, consider giving the repository a ⭐ on GitHub.
+
+---
+
+**Built with Python, AI, and Groq API to make resume-job matching smarter and easier.**
